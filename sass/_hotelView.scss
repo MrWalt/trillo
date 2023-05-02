@@ -7,3 +7,15 @@
   flex: 1;
   height: 80rem;
 }
+
+// GALLERY
+//===================================
+
+.gallery {
+  display: flex;
+
+  &__photo {
+    width: 100%;
+    display: block;
+  }
+}
