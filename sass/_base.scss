@@ -1,3 +1,44 @@
+// MEDIA QUERIES
+//=================================
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone-small {
+    @media only screen and (max-width: 26.5em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == phone-medium {
+    @media only screen and (max-width: 31em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-portrait {
+    @media only screen and (max-width: 57em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-landscape-small {
+    @media only screen and (max-width: 68em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-landscape {
+    @media only screen and (max-width: 75em) {
+      @content;
+    }
+  }
+}
+
 // VARIABLES
 //=============================
 
@@ -21,47 +62,6 @@
   --line: 1px solid var(--color-grey-light-2);
 }
 
-// MEDIA QUERIES
-//=================================
-
-@mixin respond($breakpoint) {
-  @if $breakpoint == tab-landscape {
-    @media only screen and (max-width: 75em) {
-      @content;
-    }
-  }
-
-  @if $breakpoint == tab-landscape-small {
-    @media only screen and (max-width: 68em) {
-      @content;
-    }
-  }
-
-  @if $breakpoint == tab-portrait {
-    @media only screen and (max-width: 57em) {
-      @content;
-    }
-  }
-
-  @if $breakpoint == phone {
-    @media only screen and (max-width: 37.5em) {
-      @content;
-    }
-  }
-
-  @if $breakpoint == phone-medium {
-    @media only screen and (max-width: 31em) {
-      @content;
-    }
-  }
-
-  @if $breakpoint == phone-small {
-    @media only screen and (max-width: 26.5em) {
-      @content;
-    }
-  }
-}
-
 // FONT SIZE SYSTEM (px)
 // 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
 
@@ -77,7 +77,6 @@
 }
 
 html {
-  box-sizing: border-box;
   font-size: 62.5%;
 
   @include respond(tab-landscape-small) {
@@ -97,7 +96,7 @@ body {
     var(--color-primary-dark)
   );
   background-repeat: no-repeat;
-
+  box-sizing: border-box;
   min-height: 100vh;
 }
 
