@@ -1,5 +1,9 @@
 .content {
   display: flex;
+
+  @include respond(tab-portrait) {
+    flex-direction: column;
+  }
 }
 
 .hotel-view {
@@ -27,17 +31,38 @@
   border-bottom: var(--line);
   align-items: center;
 
+  @include respond(phone-small) {
+    flex-wrap: wrap;
+  }
+
   &__heading {
     font-size: 2.4rem;
     font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 1.6rem 3.2rem;
+
+    @include respond(phone) {
+      font-size: 1.8rem;
+      padding: 1.2rem 2rem;
+    }
+
+    @include respond(phone-small) {
+      padding: 0.8rem 1.2rem;
+      margin-right: auto;
+    }
   }
 
   &__stars {
     margin-right: auto;
     display: flex;
+
+    @include respond(phone-small) {
+      order: 1;
+      width: 100%;
+      margin-bottom: 1.6rem;
+      justify-content: center;
+    }
   }
 
   &__icon-star,
@@ -56,6 +81,10 @@
 
   &__icon-location {
     margin-right: 0.6rem;
+
+    @include respond(phone-small) {
+      margin: 0;
+    }
   }
 
   &__rating {
@@ -69,17 +98,33 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+    @include respond(phone) {
+      padding: 0 1.4rem;
+    }
+
+    @include respond(phone-small) {
+      margin-left: 1.2rem;
+    }
   }
 
   &__rating-average {
     font-size: 2.4rem;
     font-weight: 300;
     margin-bottom: -3px;
+
+    @include respond(phone) {
+      font-size: 1.8rem;
+    }
   }
 
   &__rating-count {
     font-size: 0.8rem;
     text-transform: uppercase;
+
+    @include respond(phone) {
+      font-size: 0.6rem;
+    }
   }
 }
 
@@ -142,6 +187,14 @@
   background-color: var(--color-grey-light-1);
   border-bottom: var(--line);
   font-size: 1.4rem;
+
+  @include respond(tab-portrait) {
+    padding: 3.2rem;
+  }
+
+  @include respond(phone) {
+    flex-direction: column;
+  }
 }
 
 .description {
@@ -151,6 +204,16 @@
   box-shadow: var(--shadow-light);
   padding: 3.2rem;
   margin-right: 4.6rem;
+
+  @include respond(tab-portrait) {
+    padding: 2rem;
+    margin-right: 3.2rem;
+  }
+
+  @include respond(phone) {
+    margin-right: 0;
+    margin-bottom: 3.2rem;
+  }
 }
 
 .user-reviews {
@@ -215,6 +278,10 @@
     margin-right: auto;
   }
 
+  &__friends {
+    display: flex;
+  }
+
   &__photo {
     box-sizing: content-box;
     width: 4rem;
@@ -237,6 +304,10 @@
   box-shadow: var(--shadow-light);
   position: relative;
   overflow: hidden;
+
+  @include respond(tab-portrait) {
+    padding: 2rem;
+  }
 
   &__photo {
     width: 4.6rem;
@@ -295,6 +366,10 @@
 .cta {
   padding: 3.2rem 0;
   text-align: center;
+
+  @include respond(tab-portrait) {
+    padding: 2.4rem 0;
+  }
 
   &__book-now {
     font-size: 2rem;

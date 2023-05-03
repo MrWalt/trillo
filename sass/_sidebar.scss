@@ -13,11 +13,24 @@
   list-style: none;
   margin-top: 3.6rem;
 
+  @include respond(tab-portrait) {
+    display: flex;
+    margin-top: 0;
+  }
+
   &__item {
     position: relative;
 
     &:not(:last-child) {
       margin-bottom: 0.6rem;
+
+      @include respond(tab-portrait) {
+        margin-bottom: 0;
+      }
+    }
+
+    @include respond(tab-portrait) {
+      flex: 1;
     }
   }
 
@@ -57,6 +70,16 @@
 
     display: flex;
     align-items: center;
+
+    @include respond(tab-portrait) {
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    @include respond(phone) {
+      flex-direction: column;
+      padding: 1rem 0.4rem;
+    }
   }
 
   &__icon {
@@ -64,6 +87,13 @@
     height: 1.75rem;
     fill: currentColor;
     margin-right: 1.6rem;
+
+    @include respond(phone) {
+      margin-right: 0;
+      margin-bottom: 0.6rem;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
 }
 
@@ -75,4 +105,8 @@
   color: var(--color-grey-light-4);
   text-align: center;
   padding: 2.4rem;
+
+  @include respond(tab-portrait) {
+    display: none;
+  }
 }
