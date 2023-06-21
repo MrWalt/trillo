@@ -49,19 +49,29 @@
 
     @include respond(phone-small) {
       padding: 0.8rem 1.2rem;
-      margin-right: auto;
+      padding-right: 0.4rem;
     }
   }
 
   &__stars {
     margin-right: auto;
     display: flex;
+    position: relative;
 
-    @include respond(phone-small) {
-      order: 1;
-      width: 100%;
-      margin-bottom: 1.6rem;
-      justify-content: center;
+    &::after {
+      @include respond(phone-small) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        content: "5";
+        font-size: 1.6rem;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-family: inherit;
+        font-weight: bold;
+        -webkit-text-stroke-width: 0.4px;
+        -webkit-text-stroke-color: var(--color-primary);
+      }
     }
   }
 
@@ -70,6 +80,20 @@
     width: 1.75rem;
     height: 1.75rem;
     fill: var(--color-primary);
+  }
+
+  &__icon-star {
+    @include respond(phone-small) {
+      display: none;
+    }
+  }
+
+  &__icon-star:first-child {
+    @include respond(phone-small) {
+      width: 2.4rem;
+      height: 2.4rem;
+      display: inline-block;
+    }
   }
 
   &__location {
